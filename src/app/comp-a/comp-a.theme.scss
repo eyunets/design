@@ -1,0 +1,7 @@
+@import '~@angular/material/theming';
+@mixin comp-a-theme($theme) {          // define mixin
+  $primary: map-get($theme, primary);  // retrieve color def
+  button {                             // apply theme to component
+    background-color: mat-color($primary);
+  }
+}

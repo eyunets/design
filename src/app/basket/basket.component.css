@@ -1,0 +1,51 @@
+.btn {
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  background-color: #4caf50;
+}
+
+.card-deck {
+  justify-content: center;
+}
+.card {
+  background: #fff;
+  min-width: 200px;
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.card img {
+  width: 100%;
+}
+.container {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+.raw {
+  width: 100%;
+  display: inline-block;
+}
+.card-body {
+}
+.container-fluid {
+}
+.wrapper {
+  margin: auto;
+}
+
+.row {
+  text-align: center;
+  height: 200px;
+}
+.inner {
+  width: 20%;
+  margin: auto;
+  display: inline-block;
+}

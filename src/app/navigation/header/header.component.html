@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a routerLink="/dashboard">Home</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="30px" class="navigation-items">
+      <li>
+        <a routerLink="/basket"
+          ><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span *ngIf="currentUser && currentUser.burgers">
+            {{ currentUser.burgers.length }} </span
+          ></a
+        >
+      </li>
+      <li>
+        <a routerLink="/burgers">Menu</a>
+      </li>
+      <li>
+        <a routerLink="/about">About us</a>
+      </li>
+      <li *ngIf="currentUser == null || currentUser.username == 'anonym'">
+        <a routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="currentUser && currentUser.username != 'anonym'">
+        <a (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

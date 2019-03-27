@@ -1,0 +1,7 @@
+@import '~@angular/material/theming';
+@import 'app/comp-a/comp-a.theme.scss';
+@import 'app/comp-b/comp-b.theme.scss';
+@mixin custom-themes($theme) {
+  @include comp-a-theme($theme);
+  @include comp-b-theme($theme);
+}

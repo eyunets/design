@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="raw">
+    <h2>Our menu</h2>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="card-deck">
+          <div *ngFor="let burger of burgers">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="{{ burger.img }}"
+                alt="Card image cap"
+              />
+              <div class="card-block">
+                <h4 class="card-title">{{ burger.name }}</h4>
+                <p class="card-text">
+                  {{ burger.composition }}
+                </p>
+                <p class="card-price">
+                  <small class="text-muted">Price: {{burger.price}}$</small>
+                </p>
+                <a
+                  (click)="add(burger); openSnackBar('Added to basket')"
+                  class="btn btn-success"
+                  >Add to basket</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

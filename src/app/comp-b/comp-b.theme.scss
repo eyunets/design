@@ -1,0 +1,7 @@
+@import '~@angular/material/theming';
+@mixin comp-b-theme($theme) {          // define mixin
+  //$foreground: map-get($theme, $foreground);  // retrieve color def
+  .title {                             // apply theme to component
+   // color: mat-color($primary);
+  }
+}

@@ -1,0 +1,40 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
+    <mat-icon>home</mat-icon>
+    <span class="nav-caption"><a routerLink="/dashboard">Home</a></span>
+  </a>
+  <a mat-list-item routerLink="/burgers" (click)="onSidenavClose()">
+    <mat-icon>menu</mat-icon>
+    <span class="nav-caption">Menu</span>
+  </a>
+  <a mat-list-item routerLink="/basket" (click)="onSidenavClose()">
+    <mat-icon>shopping_cart</mat-icon>
+    <span class="nav-caption">
+      Basket
+      <span *ngIf="currentUser && currentUser.burgers">
+        {{ currentUser.burgers.length }}
+      </span>
+    </span>
+  </a>
+  <a
+    mat-list-item
+    *ngIf="currentUser == null || currentUser.username == 'anonym'"
+    routerLink="/login"
+    (click)="onSidenavClose()"
+  >
+    <mat-icon>account_circle</mat-icon
+    ><span class="nav-caption">
+      Login
+    </span>
+  </a>
+  <a
+    mat-list-item
+    *ngIf="currentUser && currentUser.username != 'anonym'"
+    (click)="onSidenavClose(); logout()"
+  >
+    <mat-icon>account_circle</mat-icon
+    ><span class="nav-caption">
+      Logout
+    </span>
+  </a>
+</mat-nav-list>

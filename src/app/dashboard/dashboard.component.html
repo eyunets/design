@@ -1,0 +1,65 @@
+<div style="text-align: center;">
+  <div style="display:inline-block;">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+
+      <!-- The slideshow -->
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../../assets/img/burger1.jpg" alt="Burger" />
+        </div>
+        <div class="carousel-item">
+          <img src="../../assets/img/burger2.jpg" alt="Burger" />
+        </div>
+        <div class="carousel-item">
+          <img src="../../assets/img/burger3.jpg" alt="Burger" />
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+
+    <h3 style="padding: 20px">Our hits:</h3>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="card-deck">
+          <div *ngFor="let burger of burgers">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="{{ burger.img }}"
+                alt="Card image cap"
+              />
+              <div class="card-block">
+                <h4 class="card-title">{{ burger.name }}</h4>
+                <p class="card-text">
+                  {{ burger.composition }}
+                </p>
+                <p class="card-price">
+                  <small class="text-muted">Price: {{ burger.price }}$</small>
+                </p>
+                <a
+                  (click)="add(burger); openSnackBar('Added to basket')"
+                  class="btn btn-success"
+                  >Add to basket</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

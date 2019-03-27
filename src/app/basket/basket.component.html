@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="raw">
+    <div
+      *ngIf="
+        currentUser.burgers == undefined || currentUser.burgers.length == 0;
+        else basket
+      "
+    >
+      <h2>Your basket is empty</h2>
+    </div>
+  </div>
+</div>
+
+<ng-template #basket
+  ><h2>Your basket's total price: {{ totapPrice() }}$</h2>
+  <div class="card">
+    <div class="card-body">
+      <div *ngFor="let burger of currentUser.burgers">
+        <div class="row">
+          <div class="inner">
+            <img class="card-img" src="{{ burger.img }}" alt="prewiew" />
+          </div>
+          <div class="inner">
+            <h4 class="product-name">
+              <strong>{{ burger.name }}</strong>
+            </h4>
+          </div>
+
+          <div class="inner">
+            <div style="padding-top: 5px">
+              <h6>
+                <strong
+                  >{{ burger.price }}<span class="text-muted">$</span></strong
+                >
+              </h6>
+            </div>
+          </div>
+
+          <div class="inner">
+            <button
+              (click)="delete(burger); openSnackBar('Removed')"
+              type="button"
+              class="btn btn-outline-danger btn-xs"
+            >
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+    <button class="btn btn-danger"  (click)="confirmOrder();openSnackBar('Thanks for Your order')">Confirm</button>
+  </div></ng-template
+>

@@ -11,7 +11,7 @@
           (ngSubmit)="onSubmit()"
           style="width: 100%"
         >
-          <mat-form-field >
+          <mat-form-field>
             <label for="firstName">First Name</label>
             <input
               matInput
@@ -19,7 +19,6 @@
               formControlName="firstName"
               class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
-
             />
             <mat-error
               *ngIf="submitted && f.firstName.errors"
@@ -92,7 +91,6 @@
               mat-raised-button
               color="primary"
               [disabled]="loading"
-              class="btn btn-primary"
             >
               Register
             </button>

@@ -1,7 +1,9 @@
-.container{
-  bottom: 10px;
-
-}
+.page-footer{
+  background-color:rgb(231, 238, 231) ;
+ }
+ .footer-copyright{
+  background-color:rgb(137, 184, 137) ;
+ }
 mat-toolbar{
   background-color:rgb(231, 238, 231) ;
 }
